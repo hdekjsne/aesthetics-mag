@@ -1,6 +1,6 @@
 {
   "name": "aesthetics-mag",
-  "module": "index.js",
+  "module": "./src/index.js",
   "type": "module",
   "devDependencies": {
     "@types/bun": "latest"
@@ -9,8 +9,9 @@
     "typescript": "^5.0.0"
   },
   "scripts": {
-    "run": "bun --smol run index.js",
-    "serve": "bun --smol run server.js",
+    "start": "bun --smol run ./src/index.js",
+    "serve": "bun --smol --hot run server.js",
+		"bundle": "bun build ./src/index.js --outdir ./dist",
     "clean": "rm -rf dist && echo 'Done.'"
   },
   "dependencies": {
