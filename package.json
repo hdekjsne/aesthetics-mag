@@ -9,8 +9,7 @@
     "typescript": "^5.0.0"
   },
   "scripts": {
-    "start": "bun --smol run ./src/index.js",
-    "serve": "bun --smol --hot run server.js",
+    "serve": "bun --smol run server.js",
 		"bundle": "bun build ./src/index.js --outdir ./dist",
     "clean": "rm -rf dist && echo 'Done.'"
   },
