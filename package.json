@@ -10,7 +10,7 @@
   },
   "scripts": {
     "serve": "bun --smol run server.js",
-		"bundle": "bun build ./src/index.js --outdir ./dist",
+		"bundle": "bun run compileSass.js && bun build ./src/index.js --outdir ./dist",
     "clean": "rm -rf dist && echo 'Done.'"
   },
   "dependencies": {

@@ -8,6 +8,11 @@ export const server = Bun.serve({
 			return new Response(file, {
 				headers: { 'Content-Type': 'text/javascript' }
 			});
+		} else if (/css$/.test(req.url)) {
+			const file = await Bun.file('./dist/style.css');
+			return new Response(file, {
+				headers: { 'Content-Type': 'text/css' }
+			});
 		} else {
 			const file = await Bun.file('./index.html');
 			return new Response(file, {
