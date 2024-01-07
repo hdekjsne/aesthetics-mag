@@ -18,6 +18,7 @@ $blue: #8FB5E1;
 body {
 	font-family: 'Roboto Slab', serif;
 	@include reset();
+	min-height: 100vw;
 }
 
 .header {
