@@ -18,7 +18,9 @@ $blue: #8FB5E1;
 body {
 	font-family: 'Roboto Slab', serif;
 	@include reset();
-	min-height: 100vw;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
 }
 
 .header {
@@ -100,5 +102,24 @@ body {
 				}
 			}
 		}
+	}
+}
+
+.main {
+	flex-grow: 1;
+}
+
+.footer {
+	width: 100vw;
+	height: 60px;
+
+	&-light {
+		background: $dark;
+		color: $bone;
+	}
+
+	&-dark {
+		background: $bone;
+		color: $dark;
 	}
 }

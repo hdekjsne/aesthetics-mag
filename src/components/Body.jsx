@@ -3,6 +3,7 @@ import Header from "./Header.jsx"
 import WelcomePage from "./WelcomePage.jsx";
 import ReadPage from "./ReadPage.jsx";
 import SearchPage from "./SearchPage.jsx";
+import Footer from "./Footer.jsx";
 
 export default function Body() {
 	const [mode, setMode] = useState('welcome');
@@ -24,6 +25,7 @@ export default function Body() {
 		<>
 			<Header></Header>
 			{main}
+			<Footer></Footer>
 		</>
 	)
 }
