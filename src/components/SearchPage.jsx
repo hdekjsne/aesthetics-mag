@@ -1,1 +1,3 @@
-export default function SearchPage() {}
+export default function SearchPage() {
+	return <section className="main"></section>;
+}

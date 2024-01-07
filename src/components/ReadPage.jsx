@@ -1,1 +1,3 @@
-export default function ReadPage() {}
+export default function ReadPage() {
+	return <section className="main"></section>
+}

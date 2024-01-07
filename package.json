@@ -11,7 +11,8 @@
   "scripts": {
     "serve": "bun --smol run server.js",
 		"bundle": "bun build ./src/index.jsx --outdir ./dist && bun run compileSass.js",
-    "clean": "rm -rf dist && echo 'Done.'"
+    "clean": "rm -rf dist && echo 'Done.'",
+		"all": "bun bundle && bun serve"
   },
   "dependencies": {
     "react": "^18.2.0",
