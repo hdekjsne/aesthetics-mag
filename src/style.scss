@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;400;700&display=swap');
+
 $black: #000;
 $dark: #0a0915;
 $purple: #4a3249;
@@ -5,4 +7,97 @@ $lilac: #b8b0d2;
 $white: #fff;
 $bone: #faf9fb;
 $green: #627e8a;
-$blue: #414471;
+$blue: #8FB5E1;
+
+@mixin reset() {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Roboto Slab', serif;
+	@include reset();
+}
+
+.header {
+	@include reset();
+	padding: 0 50px;
+	width: 100vw;
+	height: 60px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	p {
+		font-weight: 700;
+		cursor: pointer;
+	}
+
+	nav {
+		height: 100%;
+		display: flex;
+		flex-wrap: nowrap;
+
+		div {
+			height: 100%;
+			padding: 0 25px;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+
+			hr {
+				width: 100%;
+				height: 1px;
+				border: none;
+			}
+
+			* {
+				@include reset();
+			}
+		}
+	}
+
+	&-light {
+		background: $dark;
+		color: $bone;
+
+		hr {
+			background: $bone;
+		}
+
+		div {
+			&:hover {
+				cursor: pointer;
+				background: $green;
+				color: $dark;
+
+				hr {
+					background: $dark;
+				}
+			}
+		}
+	}
+
+	&-dark {
+		background: $bone;
+		color: $dark;
+
+		hr {
+			background: $dark;
+		}
+
+		div {
+			&:hover {
+				cursor: pointer;
+				background: $purple;
+				color: $blue;
+
+				hr {
+					background: $blue;
+				}
+			}
+		}
+	}
+}

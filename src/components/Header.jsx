@@ -1,6 +1,10 @@
+import { useContext } from "react";
+import { ThemeContext } from "../Context.jsx";
+
 export default function Header(props) {
+	const context = useContext(ThemeContext);
 	return (
-		<div>
+		<div className={`header header-${context}`}>
 			<p>КРАСИВОЕ</p>
 			<nav>
 				<div>
