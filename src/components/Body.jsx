@@ -5,12 +5,27 @@ import ReadPage from "./ReadPage.jsx";
 import SearchPage from "./SearchPage.jsx";
 import Footer from "./Footer.jsx";
 
+function bindingFunc(inner) {
+	return inner;
+}
+
 export default function Body() {
 	const [mode, setMode] = useState('welcome');
+
+	function switchToRead() {
+		setMode('read');
+	}
+	function switchToWelcome() {
+		setMode('welcome');
+	}
+	function switchToSearch() {
+		setMode('search');
+	}
+
 	let main;
 	switch (mode) {
 		case 'welcome':
-			main = <WelcomePage></WelcomePage>;
+			main = <WelcomePage modeSwitcherRead={bindingFunc(switchToRead)}></WelcomePage>;
 			break;
 		case 'read':
 			main = <ReadPage></ReadPage>;
@@ -23,7 +38,10 @@ export default function Body() {
 	}
 	return (
 		<>
-			<Header></Header>
+			<Header
+				modeSwitcherWelcome={bindingFunc(switchToWelcome)}
+				modeSwitcherSearch={bindingFunc(switchToSearch)}>
+			</Header>
 			{main}
 			<Footer></Footer>
 		</>

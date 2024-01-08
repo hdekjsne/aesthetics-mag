@@ -5,7 +5,7 @@ export default function Header(props) {
 	const context = useContext(ThemeContext);
 	return (
 		<div className={`header header-${context}`}>
-			<p>КРАСИВОЕ</p>
+			<p onClick={props.modeSwitcherWelcome}>КРАСИВОЕ</p>
 			<nav>
 				<div>
 					<span>о проекте</span>
@@ -23,7 +23,7 @@ export default function Header(props) {
 					<span>контакты</span>
 					<hr/>
 				</div>
-				<div>
+				<div onClick={props.modeSwitcherSearch}>
 					<span>поиск</span>
 					<hr/>
 				</div>

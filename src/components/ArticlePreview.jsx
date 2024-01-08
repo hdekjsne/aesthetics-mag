@@ -19,7 +19,7 @@ export default function ArticlePreview(props) {
 		<div className="article-preview">
 			<img src="" alt="" />
 			<div>
-				<p className="title-container">{props.title}</p>
+				<p className="title-container" onClick={props.modeSwitcherRead}>{props.title}</p>
 				<Tag tags={props.tags}></Tag>
 				<Authors authors={props.authors}></Authors>
 				<p className="description">{props.filling}</p>

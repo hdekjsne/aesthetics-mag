@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { ThemeContext } from "../Context.jsx";
 import ArticlePreview from "./ArticlePreview.jsx";
 
-export default function WelcomePage() {
+export default function WelcomePage(props) {
 	const context = useContext(ThemeContext);
 	const authors = ['Анастасия Мамаева'];
 	const tags = ['статья', 'эссе'];
@@ -12,7 +12,11 @@ export default function WelcomePage() {
 		<section className={`main main-${context}`}>
 			<div className="main-restricter">
 			<section className="article-preview-container">
-				<ArticlePreview title={title} tags={tags} authors={authors} filling={filling}></ArticlePreview>
+				<ArticlePreview
+					title={title} tags={tags}
+					authors={authors} filling={filling}
+					modeSwitcherRead={props.modeSwitcherRead}>
+				</ArticlePreview>
 			</section>
 			</div>
 		</section>
