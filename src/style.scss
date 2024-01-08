@@ -213,6 +213,7 @@ body {
 
 				.title-container {
 					font-size: $font-size-18;
+					cursor: pointer;
 				}
 
 				.tags-container {
@@ -246,18 +247,20 @@ body {
 		background: $bone;
 		color: $dark;
 
-		.title-container {
-			color: $dark;
-		}
-
-		.tags-container p {
-			background: $lilac;
-			color: $purple;
-		}
-
-		.authors-container p {
-			background: $blue-dark;
-			color: $bone;
+		.article-preview {
+			.title-container {
+				color: $dark;
+			}
+	
+			.tags-container p {
+				background: $lilac;
+				color: $purple;
+			}
+	
+			.authors-container p {
+				background: $blue-dark;
+				color: $bone;
+			}	
 		}
 	}
 
@@ -265,18 +268,20 @@ body {
 		background: $dark;
 		color: $bone;
 
-		.title-container {
-			color: $blue;
-		}
-
-		.tags-container p {
-			background: $purple;
-			color: $bone;
-		}
-
-		.authors-container p {
-			background: $blue;
-			color: $dark;
+		.article-preview {
+			.title-container {
+				color: $blue;
+			}
+	
+			.tags-container p {
+				background: $purple;
+				color: $bone;
+			}
+	
+			.authors-container p {
+				background: $blue;
+				color: $dark;
+			}	
 		}
 	}
 }
