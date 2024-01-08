@@ -4,6 +4,7 @@ import WelcomePage from "./WelcomePage.jsx";
 import ReadPage from "./ReadPage.jsx";
 import SearchPage from "./SearchPage.jsx";
 import Footer from "./Footer.jsx";
+import { ThemeContext } from "../Context.jsx";
 
 function bindingFunc(inner) {
 	return inner;
@@ -11,6 +12,7 @@ function bindingFunc(inner) {
 
 export default function Body() {
 	const [mode, setMode] = useState('welcome');
+	let [theme, setTheme] = useState('light');
 
 	function switchToRead() {
 		setMode('read');
@@ -20,6 +22,9 @@ export default function Body() {
 	}
 	function switchToSearch() {
 		setMode('search');
+	}
+	function switchTheme() {
+		setTheme(theme === 'light' ? 'dark' : 'light');
 	}
 
 	let main;
@@ -38,12 +43,16 @@ export default function Body() {
 	}
 	return (
 		<>
-			<Header
-				modeSwitcherWelcome={bindingFunc(switchToWelcome)}
-				modeSwitcherSearch={bindingFunc(switchToSearch)}>
-			</Header>
-			{main}
-			<Footer></Footer>
+			<ThemeContext.Provider value={theme}>
+				<Header
+					modeSwitcherWelcome={bindingFunc(switchToWelcome)}
+					modeSwitcherSearch={bindingFunc(switchToSearch)}
+					themeSwitcher={bindingFunc(switchTheme)}>
+				</Header>
+				{main}
+				<Footer></Footer>
+			</ThemeContext.Provider>
+
 		</>
 	)
 }

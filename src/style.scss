@@ -72,6 +72,65 @@ body {
 			* {
 				@include reset();
 			}
+
+		}
+
+		.theme-switcher-container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			.theme-switcher {
+				width: 25px;
+				height: 25px;
+				display: flex;
+				flex-direction: row;
+				flex-wrap: nowrap;
+
+				div:nth-child(1) {
+					width: 50%;
+					height: 100%;
+					border-radius: 25px 0 0 25px;
+				}
+
+				div:nth-child(2) {
+					width: 50%;
+					height: 100%;
+					border-radius: 0 25px 25px 0;
+				}
+
+				&-light {
+					div:nth-child(1) {
+						background: transparent;
+					}
+					div:nth-child(2) {
+						background: $bone;
+					}
+				}
+
+				&-dark {
+					div:nth-child(1) {
+						background: $dark;
+					}
+					div:nth-child(2) {
+						background: $dark;
+					}
+				}
+			}
+
+			&:hover .theme-switcher {
+				&-light {
+					div:nth-child(2) {
+						background: $dark;
+					}
+				}
+
+				&-dark {
+					div {
+						background: $blue;
+					}
+				}
+			}
 		}
 	}
 

@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { ThemeContext } from "../Context.jsx";
+import ThemeSwitcher from "./ThemeSwitcher.jsx";
 
 export default function Header(props) {
 	const context = useContext(ThemeContext);
@@ -27,6 +28,7 @@ export default function Header(props) {
 					<span>поиск</span>
 					<hr/>
 				</div>
+				<ThemeSwitcher themeSwitcher={props.themeSwitcher}></ThemeSwitcher>
 			</nav>
 		</div>
 	);
