@@ -13,7 +13,14 @@ export const server = Bun.serve({
 			return new Response(file, {
 				headers: { 'Content-Type': 'text/css' }
 			});
-		} else {
+		} else if (/jpe?g$/.test(req.url)) {
+			const pathToFile = req.url.split('/').slice(3);
+			const file = Bun.file('./' + pathToFile.join('/'));
+			return new Response(file, {
+				headers: { 'Content-Type': 'image/jpeg' }
+			});
+		}
+		else {
 			const file = await Bun.file('./index.html');
 			return new Response(file, {
 				headers: { 'Content-Type': 'text/html' }
