@@ -1,10 +1,16 @@
 export const server = Bun.serve({
 	async fetch(req) {
+		console.log(req.url);
 		if (server.upgrade(req)) {
 			return;
 		}
 		if (/js$/.test(req.url)) {
 			const file = await Bun.file('./dist/index.js');
+			return new Response(file, {
+				headers: { 'Content-Type': 'text/javascript' }
+			});
+		} else if (/jsx$/.test(req.url)) {
+			const file = Bun.file('./dist/reference.js');
 			return new Response(file, {
 				headers: { 'Content-Type': 'text/javascript' }
 			});

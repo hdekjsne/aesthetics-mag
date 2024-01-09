@@ -4,6 +4,7 @@ import ArticlePreview from "./ArticlePreview.jsx";
 import { data } from "../reference.js";
 import WelcomeGallery from "./WelcomeGallery.jsx";
 
+
 export default function WelcomePage(props) {
 	const context = useContext(ThemeContext);
 	return (
