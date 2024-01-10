@@ -1,6 +1,5 @@
 export const server = Bun.serve({
 	async fetch(req) {
-		console.log(req.url);
 		if (server.upgrade(req)) {
 			return;
 		}
