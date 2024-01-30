@@ -1,8 +1,105 @@
 import Tags from './components/Tags.jsx';
 import Authors from './components/Authors.jsx';
 import { data } from './reference.js';
+import { useState } from 'react';
 
-export default function Article(props) {
+function GalleryCustom(props) {
+	// throws an error on useState
+	const [visible, setVisible] = useState(0);
+	const themeVars = {
+		light: {
+			switcherBg: '#b8b0d2',
+			borderColor: '#0a0915',
+		},
+		dark: {
+			switcherBg: '#4a3249',
+			borderColor: '#0a0915',
+		},
+	}
+	return (
+		<section style={{
+			width: '100%',
+			height: '300px',
+			borderRadius: '0 0 20px 20px',
+		}}>
+			<div style={{ borderBottom: `1px solid ${themeVars[props.context].borderColor}`, height: '30px' }}>
+				<div style={{
+					backgroundColor: visible === 0 ? themeVars[props.context].switcherBg : 'transparent',
+					borderLeft: `1px solid ${themeVars[props.context].borderColor}`,
+					width: '70px',
+				}}></div>
+				<div style={{
+					backgroundColor: visible === 1 ? themeVars[props.context].switcherBg : 'transparent',
+					borderLeft: `1px solid ${themeVars[props.context].borderColor}`,
+					width: '70px',
+				}}></div>
+				<div style={{
+					backgroundColor: visible === 2 ? themeVars[props.context].switcherBg : 'transparent',
+					borderLeft: `1px solid ${themeVars[props.context].borderColor}`,
+					width: '70px',
+				}}></div>
+				<div style={{
+					backgroundColor: visible === 3 ? themeVars[props.context].switcherBg : 'transparent',
+					borderLeft: `1px solid ${themeVars[props.context].borderColor}`,
+					width: '70px',
+				}}></div>
+				<div style={{
+					backgroundColor: visible === 4 ? themeVars[props.context].switcherBg : 'transparent',
+					borderLeft: `1px solid ${themeVars[props.context].borderColor}`,
+					width: '70px',
+				}}></div>
+				<div style={{
+					backgroundColor: visible === 5 ? themeVars[props.context].switcherBg : 'transparent',
+					borderLeft: `1px solid ${themeVars[props.context].borderColor}`,
+					width: '70px',
+				}}></div>
+				<div style={{
+					backgroundColor: visible === 6 ? themeVars[props.context].switcherBg : 'transparent',
+					borderLeft: `1px solid ${themeVars[props.context].borderColor}`,
+					width: '70px',
+				}}></div>
+				<div style={{
+					backgroundColor: visible === 7 ? themeVars[props.context].switcherBg : 'transparent',
+					borderLeft: `1px solid ${themeVars[props.context].borderColor}`,
+					width: '70px',
+				}}></div>
+				<div style={{
+					backgroundColor: visible === 8 ? themeVars[props.context].switcherBg : 'transparent',
+					borderLeft: `1px solid ${themeVars[props.context].borderColor}`,
+					width: '70px',
+				}}></div>
+				<div style={{
+					backgroundColor: visible === 9 ? themeVars[props.context].switcherBg : 'transparent',
+					borderLeft: `1px solid ${themeVars[props.context].borderColor}`,
+					width: '70px',
+				}}></div>
+			</div>
+			<div>
+				<div style={{
+					display: 'flex',
+					gap: '25px',
+				}}>
+					<img src="" alt="Cottagecore" width='150px' height='150px' />
+					<div>
+						<p className="title-container" style={{ marginBottom: '25px' }}></p>
+						<p className='description'></p>
+					</div>
+				</div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+		</section>
+	)
+}
+
+export default function ArticleCustom(props) {
 	return (
 		<>
 			<p style={{
@@ -34,6 +131,7 @@ export default function Article(props) {
 						<li>жанр не должен быть как слишком широким, так и слишком узким.</li>
 					</ol>
 				</p>
+				{/*<GalleryCustom context={props.context}></GalleryCustom>*/}
 				<p style={{ marginBottom: '25px' }}>Подобная концепция очень популярна. В интернете существует большое количество тематических групп, авторских аккаунтов и даже целых информационных сайтов.</p>
 				<p style={{ marginBottom: '25px' }}>Особой популярности интернет-эстетики достигли в начале 2010-х и 2020-х годов. Но если в первом случае они распространялись, в основном, в низовом интернет-пространстве, то во втором уже вышли на более официальный уровень. Статьи на эту тему появлялись в Vogue, Glamour, The Atlantic, и продолжают появляться. Российский маркетплейс Lamoda составляет подборки товаров, используя стили интернет-эстетик как основу. Многие названия жанров уже стали нарицательными.</p>
 				<p style={{ marginBottom: '25px' }}>Самым крупным сообществом, посвящённым непосредственно интернет-эстетике без конкретизации жанра, остаётся Aesthetics Wiki. Данный сервис содержит около тысячи статей с информацией о различных жанрах и направлениях, у него присутствуют оригинальная англоязычная версия и переведённая русскоязычная с меньшим количеством материала. Ресурс не является коммерческим, и любой человек может добавить статью о любом новом направлении, если та пройдёт модерацию.</p>
