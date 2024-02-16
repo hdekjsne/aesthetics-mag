@@ -8,19 +8,19 @@ export default function Header(props) {
 		<div className={`header header-${context}`}>
 			<p onClick={props.modeSwitcherWelcome}>КРАСИВОЕ</p>
 			<nav>
-				<div>
+				<div onClick={props.modeSwitcherAbout}>
 					<span>о проекте</span>
 					<hr/>
 				</div>
-				<div>
+				<div onClick={props.modeSwitcherTopics}>
 					<span>темы</span>
 					<hr/>
 				</div>
-				<div>
+				<div onClick={props.modeSwitcherParticipate}>
 					<span>принять участие</span>
 					<hr/>
 				</div>
-				<div>
+				<div onClick={props.modeSwitcherContacts}>
 					<span>контакты</span>
 					<hr/>
 				</div>

@@ -216,39 +216,11 @@ body {
 					height: 150px;
 					flex-shrink: 0;
 				}
-				/*
-				.title-container {
-					font-size: $font-size-18;
-					cursor: pointer;
-				}
-
-				.tags-container {
-					display: flex;
-					gap: 10px;
-
-					p {
-						padding: 0 8px 2px 8px;
-						border-radius: 0 10px 0 10px;
-					}
-				}
-
-				.authors-container {
-					display: flex;
-					gap: 10px;
-
-					p {
-						padding: 0 8px 2px 8px;
-						border-radius: 10px;
-					}
-				}
-				*/
-
 				.description {
 					font-size: $font-size-15;
 				}
 			}
 		}
-		// the change below
 		.title-container {
 			font-size: $font-size-18;
 			cursor: pointer;
@@ -275,6 +247,11 @@ body {
 		}
 	}
 
+	progress {
+		width: 100%;
+		margin: 0;
+	}
+
 	&-light {
 		background: $bone;
 		color: $dark;
@@ -291,7 +268,20 @@ body {
 			.authors-container p {
 				background: $blue-dark;
 				color: $bone;
-			}	
+			}
+			
+			progress {
+				// how to style you?
+			}
+			progress::-webkit-progress-bar {
+				// how to style you?
+			}
+			progress::-webkit-progress-value {
+				// how to style you?
+			}
+			progress::-moz-progress-bar {
+				// how to style you?
+			}
 	}
 
 	&-dark {
@@ -310,6 +300,19 @@ body {
 			.authors-container p {
 				background: $blue;
 				color: $dark;
+			}
+			
+			progress {
+				// how to style you?
+			}
+			progress::-webkit-progress-bar {
+				// how to style you?
+			}
+			progress::-webkit-progress-value {
+				// how to style you?
+			}
+			progress::-moz-progress-bar {
+				// how to style you?
 			}
 	}
 }

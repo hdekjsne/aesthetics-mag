@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import Header from "./Header.jsx"
 import WelcomePage from "./WelcomePage.jsx";
 import ReadPage from "./ReadPage.jsx";
@@ -6,22 +6,16 @@ import SearchPage from "./SearchPage.jsx";
 import Footer from "./Footer.jsx";
 import { ThemeContext } from "../Context.jsx";
 
-function bindingFunc(inner) {
-	return inner;
+function bindingFunc(innerFunc, param) {
+	return () => innerFunc(param);
 }
 
 export default function Body() {
 	const [mode, setMode] = useState('welcome');
-	let [theme, setTheme] = useState('light');
+	const [theme, setTheme] = useState('light');
 
-	function switchToRead() {
-		setMode('read');
-	}
-	function switchToWelcome() {
-		setMode('welcome');
-	}
-	function switchToSearch() {
-		setMode('search');
+	function switchMode(mode) {
+		setMode(mode);
 	}
 	function switchTheme() {
 		setTheme(theme === 'light' ? 'dark' : 'light');
@@ -30,14 +24,22 @@ export default function Body() {
 	let main;
 	switch (mode) {
 		case 'welcome':
-			main = <WelcomePage modeSwitcherRead={bindingFunc(switchToRead)}></WelcomePage>;
+			main = <WelcomePage modeSwitcherRead={bindingFunc(switchMode, 'read')}></WelcomePage>;
 			break;
-		case 'read':
-			main = <ReadPage></ReadPage>;
+		case 'about':
+			break;
+		case 'topics':
+			break;
+		case 'participate':
+			break;
+		case 'contacts':
 			break;
 		case 'search':
 			main = <SearchPage></SearchPage>;
 			break;
+		case 'read':
+			main = <ReadPage></ReadPage>;
+			break;	
 		default:
 			console.log('no mode was provided');
 	}
@@ -45,11 +47,17 @@ export default function Body() {
 		<>
 			<ThemeContext.Provider value={theme}>
 				<Header
-					modeSwitcherWelcome={bindingFunc(switchToWelcome)}
-					modeSwitcherSearch={bindingFunc(switchToSearch)}
+					modeSwitcherWelcome={bindingFunc(switchMode, 'welcome')}
+					modeSwitcherAbout={bindingFunc(switchMode, 'about')}
+					modeSwitcherTopics={bindingFunc(switchMode, 'topics')}
+					modeSwitcherParticipate={bindingFunc(switchMode, 'participate')}
+					modeSwitcherContacts={bindingFunc(switchMode, 'contacts')}
+					modeSwitcherSearch={bindingFunc(switchMode, 'search')}
 					themeSwitcher={bindingFunc(switchTheme)}>
 				</Header>
-				{main}
+				<Suspense fallback={<progress value={null}></progress>}>
+					{main}
+				</Suspense>
 				<Footer></Footer>
 			</ThemeContext.Provider>
 

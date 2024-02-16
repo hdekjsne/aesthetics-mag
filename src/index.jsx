@@ -1,7 +1,6 @@
 import { createRoot } from "react-dom/client";
 import Body from "./components/Body.jsx";
 import { ThemeContext } from "./Context.jsx";
-import { useState } from "react";
 
 console.log("Hello via Bun!");
 
