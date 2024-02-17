@@ -1,7 +1,8 @@
-import Tags from './components/Tags.jsx';
-import Authors from './components/Authors.jsx';
-import { data } from './reference.js';
+import Tags from '../components/Tags.jsx';
+import Authors from '../components/Authors.jsx';
 import { useState } from 'react';
+
+const css = {};
 
 function GalleryCustom(props) {
 	const [visible, setVisible] = useState(0);
@@ -109,12 +110,12 @@ export default function ArticleCustom(props) {
 				padding: '10px 50px',
 				fontSize: '20px',
 				color: props.context === 'light' ? '#0a0915' : '#8FB5E1',
-			}}>{data.title}</p>
-			<Tags tags={data.tags} style={{
+			}}>Интернет-эстетики</p>
+			<Tags tags={['статья', 'эссе']} style={{
 				marginBottom: '10px',
 				marginLeft: '50px',
 			}}></Tags>
-			<Authors authors={data.authors} style={{
+			<Authors authors={['Анастасия Мамаева']} style={{
 				marginLeft: '50px',
 			}}></Authors>
 			<div className="article-preview-container" style={{

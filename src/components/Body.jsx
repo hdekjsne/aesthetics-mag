@@ -1,4 +1,4 @@
-import { Suspense, useState } from "react";
+import { Suspense, lazy, useState } from "react";
 import Header from "./Header.jsx"
 import WelcomePage from "./WelcomePage.jsx";
 import ReadPage from "./ReadPage.jsx";
@@ -21,10 +21,10 @@ export default function Body() {
 		setTheme(theme === 'light' ? 'dark' : 'light');
 	}
 
-	let main;
+	let Main;
 	switch (mode) {
 		case 'welcome':
-			main = <WelcomePage modeSwitcherRead={bindingFunc(switchMode, 'read')}></WelcomePage>;
+			Main = lazy(() => import('./WelcomePage.jsx'));
 			break;
 		case 'about':
 			break;
@@ -35,14 +35,15 @@ export default function Body() {
 		case 'contacts':
 			break;
 		case 'search':
-			main = <SearchPage></SearchPage>;
+			Main = lazy(() => import('./SearchPage.jsx'));
 			break;
 		case 'read':
-			main = <ReadPage></ReadPage>;
+			Main = lazy(() => import('./ReadPage.jsx'));
 			break;	
 		default:
 			console.log('no mode was provided');
 	}
+
 	return (
 		<>
 			<ThemeContext.Provider value={theme}>
@@ -55,8 +56,12 @@ export default function Body() {
 					modeSwitcherSearch={bindingFunc(switchMode, 'search')}
 					themeSwitcher={bindingFunc(switchTheme)}>
 				</Header>
-				<Suspense fallback={<progress value={null}></progress>}>
-					{main}
+				<Suspense fallback={
+					<section className="main">
+						<progress value={null}></progress>
+					</section>
+				}>
+					{<Main modeSwitcherRead={bindingFunc(switchMode, 'read')}></Main>}
 				</Suspense>
 				<Footer></Footer>
 			</ThemeContext.Provider>
