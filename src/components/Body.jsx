@@ -69,7 +69,6 @@ export default function Body() {
 				</Suspense>
 				<Footer></Footer>
 			</ThemeContext.Provider>
-
 		</>
 	)
 }

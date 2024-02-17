@@ -118,7 +118,7 @@ export default function ArticleCustom(props) {
 			<Authors authors={['Анастасия Мамаева']} style={{
 				marginLeft: '50px',
 			}}></Authors>
-			<div className="article-preview-container" style={{
+ 			<div className="article-preview-container" style={{
 				fontSize: '15px',
 				color: props.context === 'light' ? '#0a0915' : '#faf9fb',
 			}}>
