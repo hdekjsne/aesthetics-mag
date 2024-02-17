@@ -27,12 +27,16 @@ export default function Body() {
 			Main = lazy(() => import('./WelcomePage.jsx'));
 			break;
 		case 'about':
+			Main = lazy(() => import('./AboutPage.jsx'));
 			break;
 		case 'topics':
+			Main = lazy(() => import('./TopicsPage.jsx'));
 			break;
 		case 'participate':
+			Main = lazy(() => import('./ParticipatePage.jsx'));
 			break;
 		case 'contacts':
+			Main = lazy(() => import('./ContactsPage.jsx'));
 			break;
 		case 'search':
 			Main = lazy(() => import('./SearchPage.jsx'));
