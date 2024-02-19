@@ -236,6 +236,32 @@ body {
 			}
 		}
 
+		.info-block {
+			@include reset();
+			padding: 25px;
+			margin-top: 25px;
+			position: relative;
+
+			p:not(:last-child) {
+				margin-bottom: 25px;
+			}
+		}
+
+		.info-block:last-child {
+			margin-bottom: 25px;
+		}
+
+		.info-block::before {
+			display: block;
+			content: '';
+			width: 100%;
+			height: 100%;
+			opacity: 0.2;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+
 		.authors-container {
 			display: flex;
 			gap: 10px;
@@ -282,6 +308,14 @@ body {
 			progress::-moz-progress-bar {
 				// how to style you?
 			}
+
+			.info-block {
+				color: $dark;
+			}
+
+			.info-block::before {
+				background-color: $green;
+			}
 	}
 
 	&-dark {
@@ -313,6 +347,14 @@ body {
 			}
 			progress::-moz-progress-bar {
 				// how to style you?
+			}
+
+			.info-block {
+				color: $bone;
+			}
+
+			.info-block::before {
+				background-color: $blue;
 			}
 	}
 }
