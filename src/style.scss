@@ -273,6 +273,11 @@ body {
 		}
 	}
 
+	.marker-star {
+		@include reset();
+		margin: 0 10px;
+	}
+
 	progress {
 		width: 100%;
 		margin: 0;
@@ -316,6 +321,10 @@ body {
 			.info-block::before {
 				background-color: $green;
 			}
+
+			.marker-star::marker {
+				color: $green;
+			}
 	}
 
 	&-dark {
@@ -355,6 +364,10 @@ body {
 
 			.info-block::before {
 				background-color: $blue;
+			}
+
+			.marker-star::marker {
+				color: $blue;
 			}
 	}
 }
