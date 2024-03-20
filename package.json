@@ -11,7 +11,7 @@
   "scripts": {
     "serve": "bun --smol run server.js",
     "bundle": "bun build ./src/index.jsx --outdir ./public && bun run compileSass.js && bun build ./src/articles/reference.jsx --outdir ./public",
-    "clean": "rm -rf dist && echo 'Done.'",
+    "clean": "rm ./public/index.js ./public/reference.js ./public/style.css",
     "all": "bun bundle && bun serve"
   },
   "dependencies": {
