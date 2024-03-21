@@ -4,17 +4,17 @@ export const server = Bun.serve({
 			return;
 		}
 		if (/js$/.test(req.url)) {
-			const file = await Bun.file('./dist/index.js');
+			const file = await Bun.file('./public/index.js');
 			return new Response(file, {
 				headers: { 'Content-Type': 'text/javascript' }
 			});
 		} else if (/jsx$/.test(req.url)) {
-			const file = Bun.file('./dist/reference.js');
+			const file = Bun.file('./public/reference.js');
 			return new Response(file, {
 				headers: { 'Content-Type': 'text/javascript' }
 			});
 		} else if (/css$/.test(req.url)) {
-			const file = await Bun.file('./dist/style.css');
+			const file = await Bun.file('./public/style.css');
 			return new Response(file, {
 				headers: { 'Content-Type': 'text/css' }
 			});
@@ -26,7 +26,7 @@ export const server = Bun.serve({
 			});
 		}
 		else {
-			const file = await Bun.file('./index.html');
+			const file = await Bun.file('./public/index.html');
 			return new Response(file, {
 				headers: { 'Content-Type': 'text/html' }
 			});	

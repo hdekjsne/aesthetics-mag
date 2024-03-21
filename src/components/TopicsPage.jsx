@@ -7,7 +7,7 @@ function RepeatedPTags({ allTags }) {
     return (
       <>
         <Tags tags={[tag]}></Tags>
-        <p>{description}</p>
+        <p className="margin-left-50">{description}</p>
       </>
     );
   });
