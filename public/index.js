@@ -23667,12 +23667,40 @@ __export(exports_SearchPage, {
   }
 });
 function SearchPage() {
+  const context = import_react6.useContext(ThemeContext);
   return jsx_dev_runtime9.jsxDEV("section", {
-    className: "main"
+    className: `main search search-${context}`,
+    children: jsx_dev_runtime9.jsxDEV("div", {
+      className: "main-restricter",
+      children: [
+        jsx_dev_runtime9.jsxDEV("input", {
+          type: "text"
+        }, undefined, false, undefined, this),
+        jsx_dev_runtime9.jsxDEV(Tags, {
+          tags: [
+            "\u043B\u0438\u0447\u043D\u043E\u0441\u0442\u044C",
+            "\u043C\u0435\u0440\u043E\u043F\u0440\u0438\u044F\u0442\u0438\u0435",
+            "\u043A\u0438\u043D\u043E",
+            "\u043B\u0438\u0442\u0435\u0440\u0430\u0442\u0443\u0440\u0430",
+            "\u0444\u043E\u0442\u043E\u0433\u0440\u0430\u0444\u0438\u044F",
+            "\u0430\u0440\u0445\u0438\u0442\u0435\u043A\u0442\u0443\u0440\u0430",
+            "\u0438\u043D\u0442\u0435\u0440\u0432\u044C\u044E",
+            "\u0442\u0430\u043B\u0430\u043D\u0442"
+          ]
+        }, undefined, false, undefined, this),
+        jsx_dev_runtime9.jsxDEV(Authors, {
+          authors: ["\u0432\u044B\u0434\u0435\u0440\u0436\u043A\u0430", "\u0441\u0442\u0430\u0442\u044C\u044F", "\u044D\u0441\u0441\u0435", "\u043C\u043D\u0435\u043D\u0438\u0435", "\u043F\u0435\u0440\u0435\u0432\u043E\u0434"]
+        }, undefined, false, undefined, this)
+      ]
+    }, undefined, true, undefined, this)
   }, undefined, false, undefined, this);
 }
-var jsx_dev_runtime9;
+var import_react6, jsx_dev_runtime9;
 var init_SearchPage = __esm(() => {
+  import_react6 = __toESM(require_react(), 1);
+  init_Context();
+  init_Tags();
+  init_Authors();
   jsx_dev_runtime9 = __toESM(require_jsx_dev_runtime(), 1);
 });
 
@@ -23683,30 +23711,10 @@ __export(exports_AboutPage, {
     {
       return AboutPage;
     }
-  },
-  StreamlineAsterisk1Solid: () => {
-    {
-      return StreamlineAsterisk1Solid;
-    }
   }
 });
-function StreamlineAsterisk1Solid(props) {
-  return jsx_dev_runtime11.jsxDEV("svg", {
-    xmlns: "http://www.w3.org/2000/svg",
-    width: "1em",
-    height: "1em",
-    viewBox: "0 0 14 14",
-    ...props,
-    children: jsx_dev_runtime11.jsxDEV("path", {
-      fill: props.context === "light" ? "#627e8a" : "#8FB5E1",
-      fillRule: "evenodd",
-      d: "M7 .09a1 1 0 0 1 1 1v4.088l3.463-2.204a1 1 0 0 1 1.074 1.688L8.863 7l3.674 2.338a1 1 0 0 1-1.074 1.688L8 8.822v4.087a1 1 0 1 1-2 0V8.822l-3.463 2.204a1 1 0 1 1-1.074-1.688L5.137 7L1.463 4.662a1 1 0 1 1 1.074-1.688L6 5.178V1.091a1 1 0 0 1 1-1Z",
-      clipRule: "evenodd"
-    }, undefined, false, undefined, this)
-  }, undefined, false, undefined, this);
-}
 function AboutPage(props) {
-  const context = import_react7.useContext(ThemeContext);
+  const context = import_react8.useContext(ThemeContext);
   return jsx_dev_runtime11.jsxDEV("section", {
     className: `main main-${context}`,
     children: jsx_dev_runtime11.jsxDEV("div", {
@@ -23739,48 +23747,30 @@ function AboutPage(props) {
           children: [
             jsx_dev_runtime11.jsxDEV("p", {
               className: "marker-star",
-              children: [
-                jsx_dev_runtime11.jsxDEV(StreamlineAsterisk1Solid, {
-                  context,
-                  className: "marker-star"
-                }, undefined, false, undefined, this),
-                jsx_dev_runtime11.jsxDEV("span", {
-                  style: { fontSize: "24px", fontStyle: "oblique" },
-                  children: "\u0413\u0438\u0431\u043A\u0438\u0439 \u0444\u043E\u0440\u043C\u0430\u0442 \u0443\u0447\u0430\u0441\u0442\u0438\u044F"
-                }, undefined, false, undefined, this)
-              ]
-            }, undefined, true, undefined, this),
+              children: jsx_dev_runtime11.jsxDEV("span", {
+                style: { fontSize: "24px", fontStyle: "oblique" },
+                children: "- \u0413\u0438\u0431\u043A\u0438\u0439 \u0444\u043E\u0440\u043C\u0430\u0442 \u0443\u0447\u0430\u0441\u0442\u0438\u044F"
+              }, undefined, false, undefined, this)
+            }, undefined, false, undefined, this),
             jsx_dev_runtime11.jsxDEV("p", {
               children: "\u0412 \u0446\u0435\u043B\u0438 \u043F\u0440\u043E\u0435\u043A\u0442\u0430 \u043D\u0435 \u0432\u0445\u043E\u0434\u0438\u0442 \u0441\u043E\u0437\u0434\u0430\u043D\u0438\u0435 \u0447\u0451\u0442\u043A\u043E\u0439 \u0440\u0435\u0434\u0430\u043A\u0446\u0438\u043E\u043D\u043D\u043E\u0439 \u0441\u0442\u0440\u0443\u043A\u0442\u0443\u0440\u044B. \u041F\u043E\u044D\u0442\u043E\u043C\u0443, \u0435\u0441\u043B\u0438 \u0412\u044B \u0445\u043E\u0442\u0438\u0442\u0435 \u043F\u0440\u0438\u043D\u044F\u0442\u044C \u0432 \u043D\u0451\u043C \u0443\u0447\u0430\u0441\u0442\u0438\u0435, \u0412\u044B \u043C\u043E\u0436\u0435\u0442\u0435 \u0434\u0435\u043B\u0430\u0442\u044C \u044D\u0442\u043E \u043F\u043E \u043C\u0435\u0440\u0435 \u0412\u0430\u0448\u0438\u0445 \u0432\u043E\u0437\u043C\u043E\u0436\u043D\u043E\u0441\u0442\u0435\u0439 \u0438 \u043D\u0430\u043B\u0438\u0447\u0438\u044F \u0438\u043D\u0442\u0435\u0440\u0435\u0441\u0430."
             }, undefined, false, undefined, this),
             jsx_dev_runtime11.jsxDEV("p", {
               className: "marker-star",
-              children: [
-                jsx_dev_runtime11.jsxDEV(StreamlineAsterisk1Solid, {
-                  context,
-                  className: "marker-star"
-                }, undefined, false, undefined, this),
-                jsx_dev_runtime11.jsxDEV("span", {
-                  style: { fontSize: "24px", fontStyle: "oblique" },
-                  children: "\u041E\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0438\u0435 \u0441\u0442\u0430\u043D\u0434\u0430\u0440\u0442\u0430 \u043E\u0446\u0435\u043D\u043A\u0438"
-                }, undefined, false, undefined, this)
-              ]
-            }, undefined, true, undefined, this),
+              children: jsx_dev_runtime11.jsxDEV("span", {
+                style: { fontSize: "24px", fontStyle: "oblique" },
+                children: "- \u041E\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0438\u0435 \u0441\u0442\u0430\u043D\u0434\u0430\u0440\u0442\u0430 \u043E\u0446\u0435\u043D\u043A\u0438"
+              }, undefined, false, undefined, this)
+            }, undefined, false, undefined, this),
             jsx_dev_runtime11.jsxDEV("p", {
               children: "\u041F\u0440\u043E\u0435\u043A\u0442 \u043D\u0435 \u043D\u0430\u043F\u0440\u0430\u0432\u043B\u0435\u043D \u043D\u0430 \u043F\u0440\u043E\u0434\u0432\u0438\u0436\u0435\u043D\u0438\u0435 \u043A\u0430\u043A\u043E\u0439-\u043B\u0438\u0431\u043E \u0438\u0434\u0435\u0438, \u043E\u043D \u0432\u044B\u0441\u0442\u0443\u043F\u0430\u0435\u0442 \u043F\u043B\u0430\u0442\u0444\u043E\u0440\u043C\u043E\u0439 \u0434\u043B\u044F \u0440\u0435\u0430\u043B\u0438\u0437\u0430\u0446\u0438\u0438 \u0442\u0432\u043E\u0440\u0447\u0435\u0441\u043A\u043E\u0433\u043E \u043F\u043E\u0442\u0435\u043D\u0446\u0438\u0430\u043B\u0430."
             }, undefined, false, undefined, this),
             jsx_dev_runtime11.jsxDEV("p", {
-              children: [
-                jsx_dev_runtime11.jsxDEV(StreamlineAsterisk1Solid, {
-                  context,
-                  className: "marker-star"
-                }, undefined, false, undefined, this),
-                jsx_dev_runtime11.jsxDEV("span", {
-                  style: { fontSize: "24px", fontStyle: "oblique" },
-                  children: "\u041C\u043E\u0434\u0443\u043B\u044C\u043D\u043E\u0441\u0442\u044C \u0438 \u0438\u0437\u043C\u0435\u043D\u044F\u0435\u043C\u043E\u0441\u0442\u044C"
-                }, undefined, false, undefined, this)
-              ]
-            }, undefined, true, undefined, this),
+              children: jsx_dev_runtime11.jsxDEV("span", {
+                style: { fontSize: "24px", fontStyle: "oblique" },
+                children: "- \u041C\u043E\u0434\u0443\u043B\u044C\u043D\u043E\u0441\u0442\u044C \u0438 \u0438\u0437\u043C\u0435\u043D\u044F\u0435\u043C\u043E\u0441\u0442\u044C"
+              }, undefined, false, undefined, this)
+            }, undefined, false, undefined, this),
             jsx_dev_runtime11.jsxDEV("p", {
               children: "\u0410\u0440\u0445\u0438\u0442\u0435\u043A\u0442\u0443\u0440\u0430 \u043F\u0440\u043E\u0435\u043A\u0442\u0430 \u043F\u0440\u0435\u0434\u043F\u043E\u043B\u0430\u0433\u0430\u0435\u0442 \u0432\u043E\u0437\u043C\u043E\u0436\u043D\u043E\u0441\u0442\u044C \u0438\u0437\u043C\u0435\u043D\u0435\u043D\u0438\u044F \u0438 \u0440\u0430\u0441\u0448\u0438\u0440\u0435\u043D\u0438\u044F."
             }, undefined, false, undefined, this)
@@ -23790,9 +23780,9 @@ function AboutPage(props) {
     }, undefined, true, undefined, this)
   }, undefined, false, undefined, this);
 }
-var import_react7, jsx_dev_runtime11;
+var import_react8, jsx_dev_runtime11;
 var init_AboutPage = __esm(() => {
-  import_react7 = __toESM(require_react(), 1);
+  import_react8 = __toESM(require_react(), 1);
   init_Context();
   jsx_dev_runtime11 = __toESM(require_jsx_dev_runtime(), 1);
 });
@@ -23807,7 +23797,7 @@ __export(exports_TopicsPage, {
   }
 });
 function AboutPage2(props) {
-  const context = import_react8.useContext(ThemeContext);
+  const context = import_react9.useContext(ThemeContext);
   return jsx_dev_runtime12.jsxDEV("section", {
     className: `main main-${context}`,
     children: jsx_dev_runtime12.jsxDEV("div", {
@@ -23858,9 +23848,9 @@ function AboutPage2(props) {
     }, undefined, true, undefined, this)
   }, undefined, false, undefined, this);
 }
-var import_react8, jsx_dev_runtime12, RepeatedPTags;
+var import_react9, jsx_dev_runtime12, RepeatedPTags;
 var init_TopicsPage = __esm(() => {
-  import_react8 = __toESM(require_react(), 1);
+  import_react9 = __toESM(require_react(), 1);
   init_Context();
   init_Tags();
   jsx_dev_runtime12 = __toESM(require_jsx_dev_runtime(), 1);
@@ -23891,7 +23881,7 @@ __export(exports_ParticipatePage, {
   }
 });
 function AboutPage3(props) {
-  const context = import_react9.useContext(ThemeContext);
+  const context = import_react10.useContext(ThemeContext);
   return jsx_dev_runtime13.jsxDEV("section", {
     className: `main main-${context}`,
     children: jsx_dev_runtime13.jsxDEV("div", {
@@ -23953,9 +23943,9 @@ function AboutPage3(props) {
     }, undefined, true, undefined, this)
   }, undefined, false, undefined, this);
 }
-var import_react9, jsx_dev_runtime13;
+var import_react10, jsx_dev_runtime13;
 var init_ParticipatePage = __esm(() => {
-  import_react9 = __toESM(require_react(), 1);
+  import_react10 = __toESM(require_react(), 1);
   init_Context();
   jsx_dev_runtime13 = __toESM(require_jsx_dev_runtime(), 1);
 });
@@ -23970,7 +23960,7 @@ __export(exports_ContactsPage, {
   }
 });
 function AboutPage4(props) {
-  const context = import_react10.useContext(ThemeContext);
+  const context = import_react11.useContext(ThemeContext);
   return jsx_dev_runtime14.jsxDEV("section", {
     className: `main main-${context}`,
     children: jsx_dev_runtime14.jsxDEV("div", {
@@ -23978,9 +23968,9 @@ function AboutPage4(props) {
     }, undefined, false, undefined, this)
   }, undefined, false, undefined, this);
 }
-var import_react10, jsx_dev_runtime14;
+var import_react11, jsx_dev_runtime14;
 var init_ContactsPage = __esm(() => {
-  import_react10 = __toESM(require_react(), 1);
+  import_react11 = __toESM(require_react(), 1);
   init_Context();
   jsx_dev_runtime14 = __toESM(require_jsx_dev_runtime(), 1);
 });
@@ -23989,7 +23979,7 @@ var init_ContactsPage = __esm(() => {
 var client = __toESM(require_client(), 1);
 
 // src/components/Body.jsx
-var import_react11 = __toESM(require_react(), 1);
+var import_react12 = __toESM(require_react(), 1);
 
 // src/components/Header.jsx
 var import_react3 = __toESM(require_react(), 1);
@@ -24087,11 +24077,11 @@ init_ReadPage();
 init_SearchPage();
 
 // src/components/Footer.jsx
-var import_react6 = __toESM(require_react(), 1);
+var import_react7 = __toESM(require_react(), 1);
 init_Context();
 var jsx_dev_runtime10 = __toESM(require_jsx_dev_runtime(), 1);
 function Footer() {
-  const context = import_react6.useContext(ThemeContext);
+  const context = import_react7.useContext(ThemeContext);
   return jsx_dev_runtime10.jsxDEV("div", {
     className: `footer footer-${context}`,
     children: jsx_dev_runtime10.jsxDEV("p", {}, undefined, false, undefined, this)
@@ -24105,8 +24095,8 @@ var bindingFunc = function(innerFunc, param) {
   return () => innerFunc(param);
 };
 function Body() {
-  const [mode, setMode] = import_react11.useState("welcome");
-  const [theme, setTheme] = import_react11.useState("light");
+  const [mode, setMode] = import_react12.useState("welcome");
+  const [theme, setTheme] = import_react12.useState("light");
   function switchMode(mode2) {
     setMode(mode2);
   }
@@ -24116,25 +24106,25 @@ function Body() {
   let Main;
   switch (mode) {
     case "welcome":
-      Main = import_react11.lazy(() => Promise.resolve().then(() => (init_WelcomePage(), exports_WelcomePage)));
+      Main = import_react12.lazy(() => Promise.resolve().then(() => (init_WelcomePage(), exports_WelcomePage)));
       break;
     case "about":
-      Main = import_react11.lazy(() => Promise.resolve().then(() => (init_AboutPage(), exports_AboutPage)));
+      Main = import_react12.lazy(() => Promise.resolve().then(() => (init_AboutPage(), exports_AboutPage)));
       break;
     case "topics":
-      Main = import_react11.lazy(() => Promise.resolve().then(() => (init_TopicsPage(), exports_TopicsPage)));
+      Main = import_react12.lazy(() => Promise.resolve().then(() => (init_TopicsPage(), exports_TopicsPage)));
       break;
     case "participate":
-      Main = import_react11.lazy(() => Promise.resolve().then(() => (init_ParticipatePage(), exports_ParticipatePage)));
+      Main = import_react12.lazy(() => Promise.resolve().then(() => (init_ParticipatePage(), exports_ParticipatePage)));
       break;
     case "contacts":
-      Main = import_react11.lazy(() => Promise.resolve().then(() => (init_ContactsPage(), exports_ContactsPage)));
+      Main = import_react12.lazy(() => Promise.resolve().then(() => (init_ContactsPage(), exports_ContactsPage)));
       break;
     case "search":
-      Main = import_react11.lazy(() => Promise.resolve().then(() => (init_SearchPage(), exports_SearchPage)));
+      Main = import_react12.lazy(() => Promise.resolve().then(() => (init_SearchPage(), exports_SearchPage)));
       break;
     case "read":
-      Main = import_react11.lazy(() => Promise.resolve().then(() => (init_ReadPage(), exports_ReadPage)));
+      Main = import_react12.lazy(() => Promise.resolve().then(() => (init_ReadPage(), exports_ReadPage)));
       break;
     default:
       console.log("no mode was provided");
@@ -24152,7 +24142,7 @@ function Body() {
           modeSwitcherSearch: bindingFunc(switchMode, "search"),
           themeSwitcher: bindingFunc(switchTheme)
         }, undefined, false, undefined, this),
-        jsx_dev_runtime15.jsxDEV(import_react11.Suspense, {
+        jsx_dev_runtime15.jsxDEV(import_react12.Suspense, {
           fallback: jsx_dev_runtime15.jsxDEV("section", {
             className: "main",
             children: jsx_dev_runtime15.jsxDEV("progress", {
